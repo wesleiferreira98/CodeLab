@@ -126,7 +126,3 @@ Contribuições são bem-vindas! Sinta-se à vontade para abrir uma *Issue* ou e
 ###  **Licença**
 
 Este projeto é distribuído sob a licença MIT. Veja o arquivo [LICENSE](https://chatgpt.com/c/LICENSE) para mais detalhes.
-
----
-
-Quer que eu também prepare um exemplo de `requirements.txt` para você?
