@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CodeLab</title>
+  
+
+  <!-- CodeMirror 5 CSS 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/codemirror.min.css" /> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  -->
+   <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet" />
+   <link href="{{ url_for('static', filename='css/codemirror.min.css') }}" rel="stylesheet" />
+  <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet" />
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container px-0 px-lg-2"> <!-- Adicionado container-fluid -->
+    <a class="navbar-brand navbar-brand ps-2" href="#">CodeLab</a>
+    
+    <button class="navbar-toggler" 
+            type="button" 
+            data-bs-toggle="collapse" 
+            data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto"> <!-- Adicionado ms-auto -->
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Ambiente</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="desafios.html">Desafios</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="sobre.html">Sobre</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  <div class="container-fluid highlight-div">
+    <h1>Interfaçe de desenvolvimento</h1>
+
+    <!-- Div código + botão executar -->
+    <div id="main-area">
+      <!-- Editor de código -->
+      <div class="editor-wrapper">
+         <div id="codigo-header">
+          <div>Código Alex</div>
+          <button id="btnExecutar" class="btn-success">Executar</button> 
+        </div>
+        <textarea id="codigo" name="codigo" class="highlight-div"></textarea>
+      </div>
+      <!-- Terminal de saída -->
+      <div class="terminal-wrapper">
+        <div id="codigo-header">
+          <div>Resultado do código Alex</div>
+          <button id="btnExecutar" class="btn-success">Atualizar</button> 
+        </div>
+        
+        <div id="terminal" aria-live="polite" aria-label="Terminal de saída"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CodeMirror 5 JS
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/codemirror.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/addon/mode/simple.min.js"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/mode/javascript/javascript.min.js"></script> 
+  
+  -->
+  <!-- JS Local -->
+  <script src="{{ url_for('static', filename='js/codemirror.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/simple.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/javascript.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+</body>
+</html>

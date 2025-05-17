@@ -1,0 +1,183 @@
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #20232a;
+  color: white;
+}
+
+header {
+  flex-shrink: 0;
+}
+
+
+.container-fluid {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  min-height: 0; /* Permite que o container encolha */
+  overflow: hidden; /* Evita vazamento de conteúdo */
+}
+
+    h1 {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    #codigo-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #282c34;
+      padding: 0.75rem 1rem;
+      border-radius: 0.375rem 0.375rem 0 0;
+      border: 1px solid #444;
+    }
+
+    #codigo-header > div {
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: #abb2bf;
+    }
+
+    #btnExecutar {
+      background-color: #61afef;
+      border: none;
+      padding: 0.5rem 1rem;
+      font-weight: bold;
+      color: #ffffff;
+      border-radius: 0.375rem;
+      transition: background-color 0.3s;
+    }
+
+    #btnExecutar:hover {
+      background-color: #528bff;
+    }
+
+    #main-area {
+      flex: 1 1 auto;
+      display: flex;
+      gap: 1rem;
+      min-height: 0;
+    }
+
+    .editor-wrapper, .terminal-wrapper {
+      flex: 1 1 50%;
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+    }
+
+    .CodeMirror {
+      flex: 1 1 auto !important;
+      border-radius: 0 0 0.375rem 0.375rem;
+      font-size: 1rem;
+      border-left: 1px solid #444;
+      border-right: 1px solid #444;
+      border-bottom: 1px solid #444;
+      background-color: #282c34 !important;
+      color: #abb2bf !important;
+    }
+
+    #terminal-header {
+      background-color: #282c34;
+      padding: 0.75rem 1rem;
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: #abb2bf;
+      border-radius: 0.375rem 0.375rem 0 0;
+      border: 1px solid #444;
+    }
+
+    #terminal {
+      background-color: #1e1e1e;
+      color: #d4d4d4;
+      font-family: monospace;
+      padding: 1rem;
+      border-radius: 0 0 0.375rem 0.375rem;
+      border-left: 1px solid #444;
+      border-right: 1px solid #444;
+      border-bottom: 1px solid #444;
+      overflow-y: auto;
+      white-space: pre-wrap;
+      flex: 1 1 auto;
+    }
+
+    @media (max-width: 767.98px) {
+      #main-area {
+        flex-direction: column;
+      }
+      .editor-wrapper, .terminal-wrapper {
+        flex: 1 1 auto;
+        min-height: 200px;
+      }
+    }
+
+    /* Exemplo de tema personalizado */
+    .cm-s-alex-theme .cm-keyword { color: #d73a49; font-weight: bold; }
+    .cm-s-alex-theme .cm-number { color: #005cc5; }
+    .cm-s-alex-theme .cm-string { color: #f3b860; }
+    .cm-s-alex-theme .cm-comment { color: #6a737d; font-style: italic; }
+    .cm-s-alex-theme .cm-operator { color: #d73a49; }
+    .cm-s-alex-theme .CodeMirror-gutters {
+      background: #f0f0f0;
+      border-right: 1px solid #ddd;
+    }
+    .cm-s-alex-theme .CodeMirror {
+      background: #fafafa;
+      color: #24292e;
+    }
+
+    /* Gutter (barra de número de linhas) */
+    .cm-s-alex-theme .CodeMirror-gutters {
+      background-color: #2c313c; /* Tom escuro para combinar com o fundo */
+      border-right: 1px solid #444;
+      color: #636d83;
+    }
+
+    /* Cor dos números das linhas */
+    .cm-s-alex-theme .CodeMirror-linenumber {
+      color: #636d83;
+    }
+/* Ajustar título principal */
+h1 {
+  font-size: 1.5rem;
+  margin: 0.5rem 0;
+  padding: 0;
+}
+
+/* Ajustar cabeçalho do editor */
+#codigo-header > div {
+  font-size: 1rem;
+}
+
+/* Garantir que a área principal ocupe o espaço disponível */
+#main-area {
+  flex: 1;
+  min-height: 0;
+}
+
+/* Ajuste fino do container */
+.navbar > .container {
+  max-width: 100%;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+/* Espaçamento entre itens */
+.navbar-nav {
+  gap: 1.5rem;
+}
+
+/* Alinhamento responsivo */
+@media (max-width: 991px) {
+  .navbar-collapse {
+    padding: 0 1rem;
+  }
+}
+
+.navbar-collapse {
+  flex-grow: 0 !important;
+}

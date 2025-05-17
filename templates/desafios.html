@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Desafios CodeLab</title>
+  <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet" />
+  <link href="{{ url_for('static', filename='css/codemirror.min.css') }}" rel="stylesheet" />
+  <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet" />
+  <link href="{{ url_for('static', filename='css/styles_desafios.css') }}" rel="stylesheet" />
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container px-0 px-lg-2">
+        <a class="navbar-brand ps-2" href="#">CodeLab</a>
+        <button class="navbar-toggler me-2" type="button" 
+                data-bs-toggle="collapse" 
+                data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto pe-2">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Ambiente</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="desafios.html">Desafios</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="sobre.html">Sobre</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div class="container-fluid py-4">
+    <h2 class="mb-4 px-3">Desafios de Programação</h2>
+    
+    <!-- Desafio 1 -->
+    <div class="card challenge-card mb-4">
+      <div class="card-header">
+        <h3>Desafio 1: Hello World</h3>
+      </div>
+      <div class="card-body">
+        <p>Crie um programa que imprima "Hello World" no terminal.</p>
+        <div class="code-example">
+          <div class="code-header">Exemplo de Saída</div>
+          <pre class="sample-output">Hello World</pre>
+        </div>
+      </div>
+    </div>
+
+    <!-- Desafio 2 -->
+    <div class="card challenge-card mb-4">
+      <div class="card-header">
+        <h3>Desafio 2: Soma Simples</h3>
+      </div>
+      <div class="card-body">
+        <p>Leia dois valores inteiros e exiba a soma deles.</p>
+        <div class="code-example">
+          <div class="code-header">Entrada/Saída</div>
+          <pre class="sample-input">Entrada: 5 3</pre>
+          <pre class="sample-output">Saída: 8</pre>
+        </div>
+      </div>
+    </div>
+
+    <div class="card challenge-card mb-4">
+        <div class="card-header">
+            <h3>Desafio 3: Positivo ou Negativo</h3>
+        </div>
+        <div class="card-body">
+            <p>Verifique se um número é positivo ou negativo</p>
+            <div class="code-example">
+            <div class="code-header">Exemplo</div>
+            <pre class="sample-input">numero = 5</pre>
+            <pre class="sample-output">O número é positivo</pre>
+            </div>
+        </div>
+    </div>
+
+    <div class="card challenge-card mb-4">
+    <div class="card-header">
+        <h3>Desafio 4: Par ou Ímpar</h3>
+    </div>
+    <div class="card-body">
+        <p>Determine se um número é par ou ímpar</p>
+        <div class="code-example">
+        <div class="code-header">Exemplo</div>
+        <pre class="sample-input">numero = 4</pre>
+        <pre class="sample-output">O número é par</pre>
+        </div>
+    </div>
+   </div>
+
+   <div class="card challenge-card mb-4">
+        <div class="card-header">
+            <h3>Desafio 5: Classificação de Notas</h3>
+        </div>
+        <div class="card-body">
+            <p>Classifique uma nota em A (>=9), B (>=7), C (>=5) ou Reprovado</p>
+            <div class="code-example">
+            <div class="code-header">Exemplo</div>
+            <pre class="sample-input">nota = 8</pre>
+            <pre class="sample-output">Classificação B</pre>
+            </div>
+        </div>
+    </div>
+
+    <div class="card challenge-card mb-4">
+    <div class="card-header">
+        <h3>Desafio 6: Números Primos</h3>
+    </div>
+    <div class="card-body">
+        <p>Verifique se um número é primo usando ENQUANTO e SE</p>
+        <div class="code-example">
+        <div class="code-header">Exemplo</div>
+        <pre class="sample-input">numero = 7</pre>
+        <pre class="sample-output">7 é primo</pre>
+        </div>
+    </div>
+    </div>
+
+  </div>
+
+
+  
+
+  <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+  <script>
+    function openChallenge(challengeId) {
+      // Implementar lógica para abrir o desafio na IDE
+      window.location.href = `index.html?challenge=${challengeId}`;
+    }
+  </script>
+</body>
+</html>

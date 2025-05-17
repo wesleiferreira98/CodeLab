@@ -1,0 +1,74 @@
+/* Estilos específicos para a página de desafios */
+.challenge-card {
+  background-color: #2c313a;
+  border: 1px solid #444;
+  margin: 0 15px;
+}
+
+.challenge-card .card-header {
+  background-color: #282c34;
+  border-bottom: 1px solid #444;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.challenge-card h3 {
+  font-size: 1.25rem;
+  margin: 0;
+  color: #61afef;
+}
+
+.code-example {
+  margin: 1rem 0;
+  background-color: #1e1e1e;
+  border-radius: 4px;
+  border: 1px solid #444;
+}
+
+.code-header {
+  background-color: #282c34;
+  padding: 0.5rem 1rem;
+  font-family: monospace;
+  color: #abb2bf;
+  border-bottom: 1px solid #444;
+}
+
+.sample-input,
+.sample-output {
+  padding: 1rem;
+  margin: 0;
+  background-color: #1e1e1e;
+  color: #d4d4d4;
+  font-family: monospace;
+  white-space: pre-wrap;
+}
+
+.sample-input {
+  color: #98c379;
+  border-bottom: 1px dashed #444;
+}
+
+.btn-primary {
+  background-color: #61afef;
+  border: none;
+  padding: 0.5rem 1rem;
+}
+
+.btn-primary:hover {
+  background-color: #528bff;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .challenge-card {
+    margin: 0 5px;
+  }
+  
+  .challenge-card .card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}
