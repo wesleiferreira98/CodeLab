@@ -1,23 +1,62 @@
-/* Estilos específicos para a página de desafios */
+/* Estilos dos cartões */
 .challenge-card {
   background-color: #2c313a;
   border: 1px solid #444;
-  margin: 0 15px;
+  transition: transform 0.2s, background-color 0.2s;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  height: 270px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.challenge-card:hover {
+  transform: scale(1.02);
+  background-color: #353a45;
+}
+
+/* Área do corpo com rolagem */
+.challenge-card .card-body {
+  color: #abb2bf;
+  padding: 1rem;
+  overflow-y: auto;
+  flex-grow: 1;
+  scrollbar-width: thin;
+  scrollbar-color: #444 #2c313a;
+}
+
+/* Barra de rolagem para navegadores baseados em WebKit */
+.challenge-card .card-body::-webkit-scrollbar {
+  width: 8px;
+}
+
+.challenge-card .card-body::-webkit-scrollbar-thumb {
+  background-color: #444;
+  border-radius: 4px;
+}
+
+.challenge-card .card-body::-webkit-scrollbar-track {
+  background-color: #2c313a;
 }
 
 .challenge-card .card-header {
   background-color: #282c34;
   border-bottom: 1px solid #444;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  color: #61afef;
   padding: 1rem;
+  border-radius: 8px 8px 0 0;
 }
 
 .challenge-card h3 {
-  font-size: 1.25rem;
+  font-size: 1.3rem;
   margin: 0;
   color: #61afef;
+}
+
+.challenge-card ul {
+  padding-left: 20px;
+  color: #d4d4d4;
 }
 
 .code-example {
@@ -25,6 +64,7 @@
   background-color: #1e1e1e;
   border-radius: 4px;
   border: 1px solid #444;
+  padding: 0.5rem 1rem;
 }
 
 .code-header {
@@ -33,42 +73,21 @@
   font-family: monospace;
   color: #abb2bf;
   border-bottom: 1px solid #444;
+  border-radius: 4px 4px 0 0;
 }
 
 .sample-input,
 .sample-output {
-  padding: 1rem;
+  padding: 0.5rem 1rem;
   margin: 0;
   background-color: #1e1e1e;
   color: #d4d4d4;
   font-family: monospace;
   white-space: pre-wrap;
+  border-radius: 0 0 4px 4px;
 }
 
 .sample-input {
   color: #98c379;
   border-bottom: 1px dashed #444;
-}
-
-.btn-primary {
-  background-color: #61afef;
-  border: none;
-  padding: 0.5rem 1rem;
-}
-
-.btn-primary:hover {
-  background-color: #528bff;
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-  .challenge-card {
-    margin: 0 5px;
-  }
-  
-  .challenge-card .card-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
-  }
 }

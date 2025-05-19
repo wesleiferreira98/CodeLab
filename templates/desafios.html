@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Desafios CodeLab</title>
   <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet" />
-  <link href="{{ url_for('static', filename='css/codemirror.min.css') }}" rel="stylesheet" />
   <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet" />
   <link href="{{ url_for('static', filename='css/styles_desafios.css') }}" rel="stylesheet" />
 </head>
@@ -14,9 +13,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container px-0 px-lg-2">
         <a class="navbar-brand ps-2" href="#">CodeLab</a>
-        <button class="navbar-toggler me-2" type="button" 
-                data-bs-toggle="collapse" 
-                data-bs-target="#navbarNav">
+        <button class="navbar-toggler me-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
@@ -36,105 +33,126 @@
     </nav>
   </header>
 
-  <div class="container-fluid py-4">
-    <h2 class="mb-4 px-3">Desafios de Programação</h2>
-    
-    <!-- Desafio 1 -->
-    <div class="card challenge-card mb-4">
-      <div class="card-header">
-        <h3>Desafio 1: Hello World</h3>
-      </div>
-      <div class="card-body">
-        <p>Crie um programa que imprima "Hello World" no terminal.</p>
-        <div class="code-example">
-          <div class="code-header">Exemplo de Saída</div>
-          <pre class="sample-output">Hello World</pre>
+  <div class="container py-4">
+    <h2 class="mb-4 text-center">Desafios de Programação</h2>
+
+    <!-- Desafios -->
+    <div class="row g-4">
+      <!-- Desafio 1 -->
+      <div class="col-md-6">
+        <div class="card challenge-card">
+          <div class="card-header">
+            <h3>Desafio 1: Hello World</h3>
+          </div>
+          <div class="card-body">
+            <p>Crie um programa que imprima "Hello World" na saída do seu código.</p>
+            <div class="code-example">
+              <div class="code-header">Exemplo de Saída</div>
+              <pre class="sample-output">Hello World</pre>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- Desafio 2 -->
-    <div class="card challenge-card mb-4">
-      <div class="card-header">
-        <h3>Desafio 2: Soma Simples</h3>
-      </div>
-      <div class="card-body">
-        <p>Leia dois valores inteiros e exiba a soma deles.</p>
-        <div class="code-example">
-          <div class="code-header">Entrada/Saída</div>
-          <pre class="sample-input">Entrada: 5 3</pre>
-          <pre class="sample-output">Saída: 8</pre>
+      <!-- Desafio 2 -->
+      <div class="col-md-6">
+        <div class="card challenge-card">
+          <div class="card-header">
+            <h3>Desafio 2: Soma Simples</h3>
+          </div>
+          <div class="card-body">
+            <p>Leia dois valores inteiros e exiba a soma deles.</p>
+            <div class="code-example">
+              <div class="code-header">Entrada/Saída</div>
+              <pre class="sample-input">Entrada: 5 3</pre>
+              <pre class="sample-output">Saída: 8</pre>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="card challenge-card mb-4">
-        <div class="card-header">
+      <!-- Desafio 3 -->
+      <div class="col-md-6">
+        <div class="card challenge-card">
+          <div class="card-header">
             <h3>Desafio 3: Positivo ou Negativo</h3>
-        </div>
-        <div class="card-body">
-            <p>Verifique se um número é positivo ou negativo</p>
+          </div>
+          <div class="card-body">
+            <p>Verifique se um número é positivo ou negativo.</p>
             <div class="code-example">
-            <div class="code-header">Exemplo</div>
-            <pre class="sample-input">numero = 5</pre>
-            <pre class="sample-output">O número é positivo</pre>
+              <div class="code-header">Exemplo</div>
+              <pre class="sample-input">numero = 5</pre>
+              <pre class="sample-output">O número é positivo</pre>
             </div>
+          </div>
         </div>
-    </div>
+      </div>
 
-    <div class="card challenge-card mb-4">
-    <div class="card-header">
-        <h3>Desafio 4: Par ou Ímpar</h3>
-    </div>
-    <div class="card-body">
-        <p>Determine se um número é par ou ímpar</p>
-        <div class="code-example">
-        <div class="code-header">Exemplo</div>
-        <pre class="sample-input">numero = 4</pre>
-        <pre class="sample-output">O número é par</pre>
+      <!-- Desafio 4 -->
+      <div class="col-md-6">
+        <div class="card challenge-card">
+          <div class="card-header">
+            <h3>Desafio 4: Par ou Ímpar</h3>
+          </div>
+          <div class="card-body">
+            <p>Determine se um número é par ou ímpar.</p>
+            <div class="code-example">
+              <div class="code-header">Exemplo</div>
+              <pre class="sample-input">numero = 4</pre>
+              <pre class="sample-output">O número é par</pre>
+            </div>
+          </div>
         </div>
-    </div>
-   </div>
+      </div>
 
-   <div class="card challenge-card mb-4">
-        <div class="card-header">
+      <!-- Desafio 5 -->
+      <div class="col-md-6">
+        <div class="card challenge-card">
+          <div class="card-header">
             <h3>Desafio 5: Classificação de Notas</h3>
-        </div>
-        <div class="card-body">
-            <p>Classifique uma nota em A (>=9), B (>=7), C (>=5) ou Reprovado</p>
+          </div>
+          <div class="card-body">
+            <p>Crie um programa que leia a nota de um aluno e exiba a sua classificação:</p>
+            <ul>
+              <li><b>A</b>: Nota maior ou igual a 9</li>
+              <li><b>B</b>: Nota entre 7 e 8,9</li>
+              <li><b>C</b>: Nota entre 5 e 6,9</li>
+              <li><b>Reprovado</b>: Nota menor que 5</li>
+            </ul>
             <div class="code-example">
-            <div class="code-header">Exemplo</div>
-            <pre class="sample-input">nota = 8</pre>
-            <pre class="sample-output">Classificação B</pre>
+              <div class="code-header">Exemplo de Entrada/Saída</div>
+              <pre class="sample-input">nota = 8</pre>
+              <pre class="sample-output">Classificação B</pre>
             </div>
+          </div>
         </div>
-    </div>
+      </div>
 
-    <div class="card challenge-card mb-4">
-    <div class="card-header">
-        <h3>Desafio 6: Números Primos</h3>
-    </div>
-    <div class="card-body">
-        <p>Verifique se um número é primo usando ENQUANTO e SE</p>
-        <div class="code-example">
-        <div class="code-header">Exemplo</div>
-        <pre class="sample-input">numero = 7</pre>
-        <pre class="sample-output">7 é primo</pre>
+      <!-- Desafio 6 -->
+      <div class="col-md-6">
+        <div class="card challenge-card">
+          <div class="card-header">
+            <h3>Desafio 6: Números Primos</h3>
+          </div>
+          <div class="card-body">
+            <p>Crie um programa que verifique se um número é primo. Lembre-se:</p>
+            <ul>
+              <li>Um número primo é maior que 1 e só é divisível por 1 e por ele mesmo.</li>
+              <li>Use os comandos <b>ENQUANTO</b> e <b>SE</b> para resolver.</li>
+            </ul>
+            <div class="code-example">
+              <div class="code-header">Exemplo de Entrada/Saída</div>
+              <pre class="sample-input">numero = 7</pre>
+              <pre class="sample-output">7 é primo</pre>
+            </div>
+          </div>
         </div>
-    </div>
-    </div>
+      </div>
 
+
+    </div>
   </div>
 
-
-  
-
   <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
-  <script>
-    function openChallenge(challengeId) {
-      // Implementar lógica para abrir o desafio na IDE
-      window.location.href = `index.html?challenge=${challengeId}`;
-    }
-  </script>
 </body>
 </html>

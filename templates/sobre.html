@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sobre o CodeLab</title>
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet" />
+    <link href="{{ url_for('static', filename='css/codemirror.min.css') }}" rel="stylesheet" />
+    <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet" />
+    <link href="{{ url_for('static', filename='css/styles_sobre.css') }}" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container px-0 px-lg-2">
+                <a class="navbar-brand ps-2" href="/">CodeLab</a>
+                <button class="navbar-toggler me-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto pe-2">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">Ambiente</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="desafios.html">Desafios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="sobre.html">Sobre</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container-fluid py-4">
+        <h2 class=" text-center px-3">Sobre o CodeLab</h2>
+
+        <div class="card sobre-card mb-4">
+            <div class="card-body">
+                <h3 class="section-title">CodeLab - Ambiente de Pseudocódigo Educacional</h3>
+                <p>
+                    O <strong>CodeLab</strong> é uma plataforma online para ensinar e praticar pseudocódigo de forma interativa, desenvolvida para facilitar o aprendizado de lógica de programação. Inspirada em ferramentas como Replit e ambientes de codificação online, o <strong>CodeLab</strong> oferece um editor de código, terminal de saída e uma interface intuitiva para iniciantes em programação.
+                </p>
+
+                <h3 class="section-title">Funcionalidades Principais</h3>
+                <ul>
+                    <li><strong>Editor de Código:</strong> Área dedicada para escrever pseudocódigo, com destaque de sintaxe.</li>
+                    <li><strong>Terminal de Saída:</strong> Exibe os resultados do código executado em tempo real.</li>
+                    <li><strong>Suporte a Pseudocódigo Alex:</strong> Interpreta uma linguagem de pseudocódigo desenvolvida especificamente para facilitar a transição para linguagens como C++ e Python.</li>
+                    <li><strong>Design Responsivo:</strong> Interface adaptada para diferentes tamanhos de tela.</li>
+                    <li><strong>Botão de Execução Rápida:</strong> Permite testar o código imediatamente.</li>
+                </ul>
+
+                <h3 class="section-title">O que é o Código Alex?</h3>
+                <p>
+                    O <strong>Código Alex</strong> é uma linguagem de pseudocódigo criada para ajudar alunos do Fundamental 2 a aprenderem lógica de programação. Ela foi projetada para ser simples, intuitiva e próxima de linguagens como C++ e Python, facilitando a transição para linguagens mais avançadas.
+                </p>
+
+                <h4>Tipos de Dados</h4>
+                <ul>
+                    <li><strong>numero:</strong> Armazena números inteiros, como 5, 10, 42.</li>
+                    <li><strong>decimal:</strong> Armazena números com ponto decimal, como 3.14, 0.5, 9.99.</li>
+                    <li><strong>letra:</strong> Armazena caracteres únicos, como 'A', 'B', 'C'.</li>
+                    <li><strong>palavra:</strong> Armazena texto, como "Olá, mundo!" ou "Meu nome é Alex".</li>
+                </ul>
+
+                <h4>Comandos Básicos</h4>
+                <ul>
+                    <li><strong>Escrever:</strong> Exibe uma mensagem no terminal. Exemplo: <code>Escrever("Olá, mundo!")</code></li>
+                    <li><strong>Ler:</strong> Lê a entrada do usuário. Exemplo: <code>Ler(idade)</code></li>
+                    <li><strong>Se...Senao Se...Senao:</strong> Cria condições para executar diferentes partes do código. Exemplo:
+                        <pre>
+numero num = 1;
+Se(num > 0) {
+    Escrever("Número positivo");
+} Senao Se(num == 0) {
+    Escrever("Zero");
+} Senao {
+    Escrever("Número negativo");
+}
+                        </pre>
+                    </li>
+                    <li><strong>Enquanto:</strong> Cria laços de repetição. Exemplo:
+                        <pre>
+numero num = 1;
+Enquanto(num <= 5) {
+    Escrever(num);
+    num = num + 1;
+}
+                        </pre>
+                    </li>
+                </ul>
+
+                <h4>Exemplo de Código Alex</h4>
+                <pre class="codigo-exemplo">
+numero maior = 10;
+Se(maior > 5) {
+    Escrever("O número é maior que 5");
+} Senao {
+    Escrever("O número é 5 ou menor");
+}
+                </pre>
+
+                <p>
+                    O objetivo do Código Alex é permitir que os alunos experimentem lógica de programação de forma simples, com comandos que são fáceis de ler e entender, criando uma base sólida para aprender linguagens de programação no futuro.
+                </p>
+
+                <p>
+                    Explore os desafios, teste seus códigos e divirta-se aprendendo programação com o CodeLab!
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+</body>
+</html>

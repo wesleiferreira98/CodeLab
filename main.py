@@ -1,6 +1,6 @@
 from flask import Flask, jsonify, render_template, request
 from intepretador_server import SessaoInterpretador
-import os
+import uuid
 
 app = Flask(__name__)
 sessoes = {}
@@ -12,6 +12,18 @@ def index():
 @app.route('/desafios.html')
 def desafios():
     return render_template('desafios.html')
+
+
+@app.route('/sobre.html')
+def sobre():
+    return render_template('sobre.html')
+
+@app.route('/nova-sessao', methods=['POST'])
+def nova_sessao():
+    sessao_id = str(uuid.uuid4())
+    sessoes[sessao_id] = SessaoInterpretador(sessao_id)
+    return jsonify({'sessao_id': sessao_id})
+
 @app.route('/executar', methods=['POST'])
 def executar_codigo():
     dados = request.json
@@ -19,7 +31,7 @@ def executar_codigo():
     codigo = dados.get('codigo', '')
     
     if sessao_id not in sessoes:
-        sessoes[sessao_id] = SessaoInterpretador(sessao_id)
+        return jsonify({'erro': 'Sessão inválida'}), 400
         
     return sessoes[sessao_id].processar_codigo(codigo)
 

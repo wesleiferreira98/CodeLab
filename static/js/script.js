@@ -1,9 +1,9 @@
 // Definir palavras reservadas para o pseudocódigo
     const palavrasReservadas = [
-      "Escrever", "Ler", "numero", "decimal", "texto", "Se", "Senao", "Enquanto", "FimSe", "FimEnquanto"
+      "Escrever", "Ler", "numero", "decimal", "texto", "Se", "Senao", "Enquanto", "FimSe", "FimEnquanto", "Parar"
     ];
 
-    // Registrar um simples modo para destacar palavras reservadas
+    // Registrar o modo personalizado para o CodeMirror
     CodeMirror.defineSimpleMode("alexMode", {
       start: [
         {regex: /\/\/.*/, token: "comment"},
@@ -22,7 +22,7 @@
       }
     });
 
-    // Inicializa editor CodeMirror com modo customizado e tema personalizado
+    // Inicializa o editor CodeMirror
     const editor = CodeMirror.fromTextArea(document.getElementById('codigo'), {
       lineNumbers: true,
       mode: "alexMode",
@@ -32,37 +32,47 @@
       autofocus: true,
     });
 
+    let sessaoId = '';
+
+    // Cria uma nova sessão ao carregar a página
+    async function iniciarSessao() {
+        try {
+            const response = await fetch('/nova-sessao', { method: 'POST' });
+            const data = await response.json();
+            sessaoId = data.sessao_id;
+            console.log('Sessão iniciada:', sessaoId);
+        } catch (err) {
+            console.error('Erro ao iniciar sessão:', err);
+            alert('Erro ao iniciar sessão. Tente novamente.');
+        }
+    }
+
+    // Chama a função para iniciar a sessão
+    iniciarSessao();
+
+    // Executa o código quando o botão é clicado
     const btn = document.getElementById('btnExecutar');
     const terminal = document.getElementById('terminal');
-    const sessao_id = 'sessao_web';
 
     btn.addEventListener('click', async () => {
-      const codigo = editor.getValue().trim();
-      if (!codigo) {
-        alert('Por favor, digite algum código.');
-        return;
-      }
+        const codigo = editor.getValue().trim();
+        if (!codigo) {
+            alert('Por favor, digite algum código.');
+            return;
+        }
 
-      terminal.textContent = 'Executando...\n';
+        terminal.textContent = 'Executando...\n';
 
-      try {
-        const response = await fetch('/executar', {
-          method: 'POST',
-          headers: {'Content-Type': 'application/json'},
-          body: JSON.stringify({ sessao_id, codigo })
-        });
+        try {
+            const response = await fetch('/executar', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({ sessao_id: sessaoId, codigo })
+            });
 
-        const data = await response.json();
-        terminal.textContent = data.saidas ? data.saidas.join('\n') : 'Nenhuma saída.';
-      } catch (err) {
-        terminal.textContent = 'Erro: ' + err.message;
-      }
+            const data = await response.json();
+            terminal.textContent = data.saidas ? data.saidas.join('\n') : 'Nenhuma saída.';
+        } catch (err) {
+            terminal.textContent = 'Erro: ' + err.message;
+        }
     });
-
-// No seu JavaScript
-fetch('/nova-sessao', { method: 'POST' })
-  .then(response => response.json())
-  .then(data => {
-    const sessaoId = data.sessao_id;
-    // Armazene o sessionId para usar nas requisições
-  });
