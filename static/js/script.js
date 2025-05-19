@@ -1,6 +1,6 @@
 // Definir palavras reservadas para o pseudocódigo
     const palavrasReservadas = [
-      "Escrever", "Ler", "numero", "decimal", "texto", "Se", "Senao", "Enquanto", "FimSe", "FimEnquanto", "Parar"
+      "Escrever", "Ler", "numero", "decimal", "texto", "Se", "Senao", "Enquanto", "FimSe", "FimEnquanto", "Parar","palavra","letra"
     ];
 
     // Registrar o modo personalizado para o CodeMirror
